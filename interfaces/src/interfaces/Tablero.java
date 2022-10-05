@@ -5,7 +5,9 @@
 package interfaces;
 
 import DibujarTableros.Cañas;
+import DibujarTableros.DibujarTablero5;
 import DibujarTableros.DibujarTablero7;
+import DibujarTableros.IDibujarTableros;
 import Juego.Movimientos;
 import builder.DirectorFicha;
 import builder.FichaBuilder;
@@ -21,7 +23,7 @@ import javax.swing.JPanel;
  * @author 52644
  */
 public class Tablero extends javax.swing.JFrame {
-    static DibujarTablero7 dibujar = new DibujarTablero7();
+    
     DirectorFicha director = new DirectorFicha();
     FichaBuilder builder = new FichaBuilder();
     /**
@@ -35,7 +37,13 @@ public class Tablero extends javax.swing.JFrame {
         director.construirFichaAzul(builder, 2, f1.getImage()); 
     }
     public void pintar(){
-        dibujar.dibujarTablero(tablero.getGraphics());
+        if(configuracion.txtCasillas.getText().equals("14")){
+            IDibujarTableros dibujar = new DibujarTablero7();
+            dibujar.dibujarTablero(tablero.getGraphics());
+        }else if(configuracion.txtCasillas.getText().equals("10")){
+            IDibujarTableros dibujar = new DibujarTablero5();
+            dibujar.dibujarTablero(tablero.getGraphics());
+        }
         mostrarInfoJugador(infoJugador1.getGraphics());
     }
     public void ingresarFicha(){

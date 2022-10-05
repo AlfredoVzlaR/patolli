@@ -6,6 +6,7 @@ package Juego;
 
 import DibujarTableros.Cañas;
 import interfaces.Tablero;
+import interfaces.configuracion;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
 
@@ -18,12 +19,20 @@ import javax.swing.ImageIcon;
 public class Movimientos {
     public void ingresaFicha(Graphics g){
         int suma = Cañas.suma;
+        String tablero = configuracion.txtCasillas.getText();
         if(suma>0){
-            ImageIcon fichaAIngresar = new ImageIcon(getClass().getResource("/img/ficha1.png"));
-            ImageIcon fondoBlanco = new ImageIcon(getClass().getResource("/img/fondoBlanco.png"));
-            g.drawImage(fichaAIngresar.getImage(),415,200,null);
-            Tablero.ficha1.setIcon(fondoBlanco);
-            g.drawImage(fichaAIngresar.getImage(), 415, 200, null);
+            if(tablero.equals("14")){
+                ImageIcon fichaAIngresar = new ImageIcon(getClass().getResource("/img/ficha1.png"));
+                ImageIcon fondoBlanco = new ImageIcon(getClass().getResource("/img/fondoBlanco.png"));
+                g.drawImage(fichaAIngresar.getImage(),410,200,null);
+                Tablero.ficha1.setIcon(fondoBlanco);
+                g.drawImage(fichaAIngresar.getImage(), 410, 200, null);
+            }else if(tablero.equals("10")){
+                ImageIcon fichaAIngresar = new ImageIcon(getClass().getResource("/img/ficha1.png"));
+                ImageIcon fondoBlanco = new ImageIcon(getClass().getResource("/img/fondoBlanco.png"));
+                Tablero.ficha1.setIcon(fondoBlanco);
+                g.drawImage(fichaAIngresar.getImage(), 410, 195, null);
+            }
         }
     }
 }

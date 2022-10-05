@@ -316,7 +316,7 @@ public class configuracion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel titulo;
     private javax.swing.JTextField txtApuesta;
-    private static javax.swing.JTextField txtCasillas;
+    public static javax.swing.JTextField txtCasillas;
     private javax.swing.JTextField txtFondo;
     // End of variables declaration//GEN-END:variables
 }
