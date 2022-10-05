@@ -12,12 +12,7 @@ import Juego.Movimientos;
 import builder.DirectorFicha;
 import builder.FichaBuilder;
 import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Panel;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
-
 /**
  *
  * @author 52644
@@ -55,6 +50,10 @@ public class Tablero extends javax.swing.JFrame {
         ImageIcon f2 = new ImageIcon(getClass().getResource("/img/ficha1.png"));
         ficha1.setIcon(f1);
         ficha2.setIcon(f2);
+    }
+    public void moverFicha(){
+        Movimientos mov = new Movimientos();
+        mov.moverFicha(tablero.getGraphics());
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -284,6 +283,7 @@ public class Tablero extends javax.swing.JFrame {
         Cañas cañas = new Cañas();
         cañas.generarLado();
         ingresarFicha();
+        moverFicha();
     }//GEN-LAST:event_tirarCañasActionPerformed
 
     /**

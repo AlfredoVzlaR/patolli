@@ -235,6 +235,7 @@ public class configuracion extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "El fondo y la apuesta deben ser números postivos y mayores a 0.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        JOptionPane.showMessageDialog(this, "Datos correctos, puedes inicar el juego", "Validación", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_btnValidarActionPerformed
 

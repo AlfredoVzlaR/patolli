@@ -35,4 +35,15 @@ public class Movimientos {
             }
         }
     }
+    public void moverFicha(Graphics g){
+        int suma = Cañas.suma;
+        int posiciones = suma*30;
+        String tablero = configuracion.txtCasillas.getText();
+        if(suma>0){
+            if(tablero.equals("14")){
+                ImageIcon fichaMover = new ImageIcon(getClass().getResource("/img/ficha1.png"));
+                g.drawImage(fichaMover.getImage(), 410, 200-posiciones, null);
+            }
+        }
+    }
 }
